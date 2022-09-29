@@ -14,6 +14,7 @@ export type Guitar = {
 };
 
 export type Bass = {
+  id: number;
   brand: string;
   electric: boolean;
   fretless: boolean;

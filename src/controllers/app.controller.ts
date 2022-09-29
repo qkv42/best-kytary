@@ -23,24 +23,30 @@ export class AppController {
   //   return this.guitarService.getGuitar();
   // }
 
+  @Get('/guitar/:id')
+  getGuitarById(@Param('id') id: number): Guitar {
+    // console.log(id);
+    return this.guitarService.getGuitarById(id);
+  }
+
   @Get('guitars')
   getGuitars(): Guitar[] {
     return this.guitarService.getGuitars();
   }
 
-  @Get('bass')
-  getBass(): Bass {
-    return this.bassService.getBass();
+  // @Get('bass')
+  // getBass(): Bass {
+  //   return this.bassService.getBass();
+  // }
+
+  @Get('/bass/:id')
+  getBassById(@Param('id') id: number): Bass {
+    // console.log(id);
+    return this.bassService.getBassById(id);
   }
 
   @Get('basses')
   getBasses(): Bass[] {
     return this.bassService.getBasses();
-  }
-
-  @Get('/guitar/:id')
-  getGuitarById(@Param('id') id: number): Guitar {
-    // console.log(id);
-    return this.guitarService.getGuitarById(id);
   }
 }

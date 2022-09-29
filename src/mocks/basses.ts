@@ -2,6 +2,7 @@ import { Bass } from 'src/interface';
 
 export const basses: Bass[] = [
   {
+    id: 1,
     brand: 'Fender',
     electric: true,
     fretless: true,
@@ -9,6 +10,7 @@ export const basses: Bass[] = [
     numberOfStrings: 4,
   },
   {
+    id: 2,
     brand: 'Fender',
     electric: true,
     fretless: false,
@@ -16,6 +18,7 @@ export const basses: Bass[] = [
     numberOfStrings: 4,
   },
   {
+    id: 3,
     brand: 'Spector',
     electric: true,
     fretless: false,
@@ -23,6 +26,7 @@ export const basses: Bass[] = [
     numberOfStrings: 5,
   },
   {
+    id: 4,
     brand: 'Fender',
     electric: true,
     fretless: true,
