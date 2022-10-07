@@ -1,27 +1,17 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { AppService } from '../services/app.service';
 import { GuitarService } from 'src/services/guitar.service';
 import { Guitar, Bass } from 'src/interface';
 import { BassService } from 'src/services/bass.service';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller()
+@ApiTags('Guitars')
 export class AppController {
-  someService: any;
+  // someService: any;
   constructor(
-    private readonly appService: AppService,
     private readonly guitarService: GuitarService,
     private readonly bassService: BassService,
   ) {}
-
-  @Get('cojavim')
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
-  // @Get('guitar')
-  // getGuitar(): Guitar {
-  //   return this.guitarService.getGuitar();
-  // }
 
   @Get('/guitar/:id')
   getGuitarById(@Param('id') id: number): Guitar {
@@ -33,11 +23,6 @@ export class AppController {
   getGuitars(): Guitar[] {
     return this.guitarService.getGuitars();
   }
-
-  // @Get('bass')
-  // getBass(): Bass {
-  //   return this.bassService.getBass();
-  // }
 
   @Get('/bass/:id')
   getBassById(@Param('id') id: number): Bass {

@@ -6,7 +6,6 @@ import { basses } from 'src/mocks/basses';
 export class BassService {
   getBassById(id?: number): Bass {
     const foundBass = basses.find((bass) => bass.id == id);
-    console.log(foundBass);
     return foundBass;
   }
 

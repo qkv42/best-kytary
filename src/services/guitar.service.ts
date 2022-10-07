@@ -7,7 +7,6 @@ export class GuitarService {
   getGuitarById(id?: number): Guitar {
     // todo - opravit tohle == + pipes
     const foundGuitar = guitars.find((guitar) => guitar.id == id);
-    console.log(foundGuitar);
     return foundGuitar;
   }
 
