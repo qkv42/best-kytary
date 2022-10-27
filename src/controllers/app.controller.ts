@@ -3,20 +3,23 @@ import { GuitarService } from 'src/services/guitar.service';
 import { Guitar, Bass } from 'src/interface';
 import { BassService } from 'src/services/bass.service';
 import { ApiTags } from '@nestjs/swagger';
+import { throwNotFoundError } from 'src/utils';
 
 @Controller()
 @ApiTags('Guitars')
 export class AppController {
-  // someService: any;
   constructor(
     private readonly guitarService: GuitarService,
     private readonly bassService: BassService,
   ) {}
 
   @Get('/guitar/:id')
-  getGuitarById(@Param('id') id: number): Guitar {
-    // console.log(id);
-    return this.guitarService.getGuitarById(id);
+  getGuitarById(@Param('id') id: number) {
+    const guitar = this.guitarService.getGuitarById(id);
+    if (!guitar) {
+      throwNotFoundError("Guitar with this ID doesn't exist.");
+    }
+    return guitar;
   }
 
   @Get('guitars')
@@ -26,8 +29,11 @@ export class AppController {
 
   @Get('/bass/:id')
   getBassById(@Param('id') id: number): Bass {
-    // console.log(id);
-    return this.bassService.getBassById(id);
+    const bass = this.bassService.getBassById(id);
+    if (!bass) {
+      throw throwNotFoundError("Bassguitar with this ID doesn't exist.");
+    }
+    return bass;
   }
 
   @Get('basses')
