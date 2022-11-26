@@ -1,8 +1,7 @@
 // import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './app.controller';
 
-describe('AppController', () => {
-  // let appController: AppController;
+describe('GuitarController', () => {
+  // let guitarController: GuitarController;
 
   beforeEach(async () => {
     // todo implement later
@@ -10,16 +9,16 @@ describe('AppController', () => {
     console.log('not implemented');
 
     //   const app: TestingModule = await Test.createTestingModule({
-    //     controllers: [AppController],
-    //     providers: [AppService],
+    //     controllers: [GuitarController],
+    //     providers: [GuitarService],
     //   }).compile();
 
-    //   appController = app.get<AppController>(AppController);
+    //   guitarController = app.get<GuitarController>(GuitarController);
     // });
 
     // describe('root', () => {
     //   it('should return "hej ty!"', () => {
-    //     expect(appController.getHello()).toBe('hej ty!');
+    //     expect(guitarController.getHello()).toBe('hej ty!');
     //   });
   });
 });
