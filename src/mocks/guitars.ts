@@ -7,7 +7,7 @@ export const guitars: Guitar[] = [
     shape: GuitarShape.OMc,
     material: 'spruce',
     finish: 'satin',
-    color: 'chocolate',
+    colour: 'chocolate',
     numberOfStrings: 6,
   },
   {
@@ -16,7 +16,7 @@ export const guitars: Guitar[] = [
     shape: GuitarShape.OM,
     material: 'cedar',
     finish: 'gloss',
-    color: 'gingerbread',
+    colour: 'gingerbread',
     numberOfStrings: 6,
   },
   {
@@ -25,7 +25,7 @@ export const guitars: Guitar[] = [
     shape: GuitarShape.OMc,
     material: 'spruce',
     finish: 'gloss',
-    color: 'tortilla',
+    colour: 'tortilla',
     numberOfStrings: 6,
   },
   {
@@ -34,7 +34,7 @@ export const guitars: Guitar[] = [
     shape: GuitarShape.OM,
     material: 'cedar',
     finish: 'satin',
-    color: 'caramel',
+    colour: 'caramel',
     numberOfStrings: 6,
   },
   {
@@ -43,7 +43,7 @@ export const guitars: Guitar[] = [
     shape: GuitarShape.OMc,
     material: 'spruce',
     finish: 'satin',
-    color: 'pecan',
+    colour: 'pecan',
     numberOfStrings: 6,
   },
 ];

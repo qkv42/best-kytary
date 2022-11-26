@@ -9,7 +9,7 @@ export type Guitar = {
   shape: GuitarShape;
   material: string;
   finish: string;
-  color: string;
+  colour: string;
   numberOfStrings: number;
 };
 
@@ -18,6 +18,6 @@ export type Bass = {
   brand: string;
   electric: boolean;
   fretless: boolean;
-  color: string;
+  colour: string;
   numberOfStrings: number;
 };

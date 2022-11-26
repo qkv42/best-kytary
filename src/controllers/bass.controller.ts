@@ -5,7 +5,7 @@ import { BassService } from 'src/services/bass.service';
 import { throwNotFoundError } from 'src/utils';
 
 @Controller()
-@ApiTags('Guitars')
+@ApiTags('Basses')
 export class BassController {
   constructor(private readonly bassService: BassService) {}
 

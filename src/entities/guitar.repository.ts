@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Example } from 'src/entities/example.entity';
+import { Guitars } from 'src/entities/guitar.entity';
 
 type ExampleDB = {
   id: string;
@@ -9,21 +9,21 @@ type ExampleDB = {
 };
 
 @Injectable()
-export class ExampleRepository {
+export class GuitarsRepository {
   constructor(
-    @InjectRepository(Example)
-    private repository: Repository<Example>,
+    @InjectRepository(Guitars)
+    private repository: Repository<Guitars>,
   ) {}
 
-  findAll(): Promise<Example[]> {
+  findAll(): Promise<Guitars[]> {
     return this.repository.find();
   }
 
-  findOne(id: string): Promise<Example> {
+  findOne(id: string): Promise<Guitars> {
     return this.repository.findOneBy({ id });
   }
 
-  async createOne(params: ExampleDB): Promise<Example> {
+  async createOne(params: ExampleDB): Promise<Guitars> {
     return this.repository.save(params);
   }
 

@@ -6,7 +6,7 @@ export const basses: Bass[] = [
     brand: 'Fender',
     electric: true,
     fretless: true,
-    color: 'black',
+    colour: 'black',
     numberOfStrings: 4,
   },
   {
@@ -14,7 +14,7 @@ export const basses: Bass[] = [
     brand: 'Fender',
     electric: true,
     fretless: false,
-    color: 'yellow',
+    colour: 'yellow',
     numberOfStrings: 4,
   },
   {
@@ -22,7 +22,7 @@ export const basses: Bass[] = [
     brand: 'Spector',
     electric: true,
     fretless: false,
-    color: 'orange',
+    colour: 'orange',
     numberOfStrings: 5,
   },
   {
@@ -30,7 +30,7 @@ export const basses: Bass[] = [
     brand: 'Fender',
     electric: true,
     fretless: true,
-    color: 'sunburst',
+    colour: 'sunburst',
     numberOfStrings: 4,
   },
 ];

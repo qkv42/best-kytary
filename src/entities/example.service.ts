@@ -16,4 +16,8 @@ export class ExampleService {
   deleteExample(id: string): Promise<void> {
     return this.exampleRepository.remove(id);
   }
+
+  updateExample(id: string, params: any): any {
+    return this.exampleRepository.update(id, params);
+  }
 }
