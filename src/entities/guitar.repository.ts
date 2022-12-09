@@ -2,12 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Guitars } from 'src/entities/guitar.entity';
-
-type ExampleDB = {
-  id: string;
-  value: string;
-};
-
 @Injectable()
 export class GuitarsRepository {
   constructor(
@@ -19,19 +13,19 @@ export class GuitarsRepository {
     return this.repository.find();
   }
 
-  findOne(id: string): Promise<Guitars> {
+  findOne(id: number): Promise<Guitars> {
     return this.repository.findOneBy({ id });
   }
 
-  async createOne(params: ExampleDB): Promise<Guitars> {
+  async createOne(params: Guitars): Promise<Guitars> {
     return this.repository.save(params);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: number): Promise<void> {
     await this.repository.delete(id);
   }
 
-  async update(id: string, params: any): Promise<void> {
+  async update(id: number, params: any): Promise<void> {
     await this.repository.update(id, params);
   }
 }

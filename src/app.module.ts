@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { GuitarService } from './services/guitar.service';
-import { BassService } from './services/bass.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Example } from './entities/example.entity';
 import { ExampleModule } from './entities/example.module';
-import { BassController } from './controllers/bass.controller';
-import { GuitarController } from './controllers/guitar.controller';
+import { Guitars } from './entities/guitar.entity';
+import { InstrumentsModule } from './entities/instruments.module';
 
 @Module({
   imports: [
@@ -17,13 +15,12 @@ import { GuitarController } from './controllers/guitar.controller';
       //TODO no in github
       password: 'kytara',
       database: 'best-kytary',
-      entities: [Example],
+      entities: [Example, Guitars],
       synchronize: true,
     }),
 
     ExampleModule,
+    InstrumentsModule,
   ],
-  controllers: [GuitarController, BassController],
-  providers: [GuitarService, BassService],
 })
 export class AppModule {}

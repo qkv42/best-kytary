@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Example } from 'src/entities/example.entity';
 
-type ExampleDB = {
+export type ExampleDB = {
   id: string;
   value: string;
 };

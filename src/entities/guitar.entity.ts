@@ -1,10 +1,25 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Guitars {
-  @PrimaryColumn()
-  id: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column()
-  value: string;
+  brand: string;
+
+  @Column()
+  shape: string;
+
+  @Column()
+  material: string;
+
+  @Column()
+  finish: string;
+
+  @Column()
+  colour: string;
+
+  @Column()
+  numberofstrings: number;
 }

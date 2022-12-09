@@ -8,6 +8,7 @@ import {
   HttpCode,
   Patch,
 } from '@nestjs/common';
+import { Example } from './example.entity';
 import { ExampleService } from './example.service';
 
 @Controller()
@@ -20,7 +21,7 @@ export class ExampleController {
   }
 
   @Post('/example')
-  createExample(@Body() params: any): any {
+  createExample(@Body() params: Example): Promise<Example> {
     const createdExample = this.exampleService.createExample(params);
     return createdExample;
   }
@@ -33,7 +34,10 @@ export class ExampleController {
 
   @Patch('/example/:id')
   @HttpCode(202)
-  updateExample(@Body() id: string, params: any): any {
+  updateExample(
+    @Param('id') id: string,
+    @Body() params: Example,
+  ): Promise<void> {
     const updatedExample = this.exampleService.updateExample(id, params);
     return updatedExample;
   }
