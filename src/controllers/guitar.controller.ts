@@ -41,17 +41,19 @@ export class GuitarController {
 
   @Delete('/guitar/:id')
   @HttpCode(202)
-  async deleteExample(@Param('id') id: number) {
+  async deleteGuitar(@Param('id') id: number) {
     await this.guitarService.deleteGuitar(id);
   }
 
   @Patch('/guitar/:id')
   @HttpCode(202)
-  updateExample(
-    @Param('id') id: number,
-    @Body() params: Guitar,
-  ): Promise<void> {
+  updateGuitar(@Param('id') id: number, @Body() params: Guitar): Promise<void> {
     const updatedGuitar = this.guitarService.updateGuitar(id, params);
     return updatedGuitar;
+  }
+
+  @Post('/guitars/restore-mock-db')
+  truncateAndCreateGuitars(): Promise<void> {
+    return this.guitarService.truncateGuitars();
   }
 }

@@ -25,7 +25,12 @@ export class GuitarService {
   deleteGuitar(id: number): Promise<void> {
     return this.guitarsRepository.remove(id);
   }
+
   updateGuitar(id: number, params: any): Promise<void> {
     return this.guitarsRepository.update(id, params);
+  }
+
+  truncateGuitars(): Promise<void> {
+    return this.guitarsRepository.truncate();
   }
 }

@@ -28,4 +28,8 @@ export class GuitarsRepository {
   async update(id: number, params: any): Promise<void> {
     await this.repository.update(id, params);
   }
+
+  async truncate(): Promise<void> {
+    return await this.repository.clear();
+  }
 }
