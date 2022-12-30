@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { GuitarsRepository } from 'src/entities/guitar.repository';
 import { Guitars } from 'src/entities/guitar.entity';
+import { guitars } from 'src/mocks/guitars';
 
 @Injectable()
 export class GuitarService {
@@ -30,7 +31,10 @@ export class GuitarService {
     return this.guitarsRepository.update(id, params);
   }
 
-  truncateGuitars(): Promise<void> {
-    return this.guitarsRepository.truncate();
+  truncateAndCreateGuitars(): void {
+    this.guitarsRepository.truncate();
+    for (let i = 0; i < guitars.length; i++) {
+      this.createGuitar(guitars[i]);
+    }
   }
 }

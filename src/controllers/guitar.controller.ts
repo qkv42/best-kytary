@@ -53,7 +53,7 @@ export class GuitarController {
   }
 
   @Post('/guitars/restore-mock-db')
-  truncateAndCreateGuitars(): Promise<void> {
-    return this.guitarService.truncateGuitars();
+  truncateAndCreateGuitars(): void {
+    return this.guitarService.truncateAndCreateGuitars();
   }
 }

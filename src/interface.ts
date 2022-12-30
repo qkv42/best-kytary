@@ -4,13 +4,12 @@ export enum GuitarShape {
 }
 
 export type Guitar = {
-  id: number;
   brand: string;
   shape: GuitarShape;
   material: string;
   finish: string;
   colour: string;
-  numberOfStrings: number;
+  numberofstrings: number;
 };
 
 export type Bass = {
@@ -19,5 +18,5 @@ export type Bass = {
   electric: boolean;
   fretless: boolean;
   colour: string;
-  numberOfStrings: number;
+  numberofstrings: number;
 };
