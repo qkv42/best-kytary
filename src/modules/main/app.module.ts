@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Example } from './entities/example.entity';
-import { ExampleModule } from './entities/example.module';
-import { Guitars } from './entities/guitar.entity';
-import { InstrumentsModule } from './entities/instruments.module';
+import { Example } from '../../entities_example/example.entity';
+import { ExampleModule } from '../../entities_example/example.module';
+import { Guitars } from '../instruments/guitar.entity';
+import { InstrumentsModule } from '../instruments/instruments.module';
 
 @Module({
   imports: [

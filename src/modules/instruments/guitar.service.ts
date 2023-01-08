@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { GuitarsRepository } from 'src/entities/guitar.repository';
-import { Guitars } from 'src/entities/guitar.entity';
+import { GuitarsRepository } from 'src/modules/instruments/guitar.repository';
+import { Guitars } from 'src/modules/instruments/guitar.entity';
 import { guitars } from 'src/mocks/guitars';
 
 @Injectable()

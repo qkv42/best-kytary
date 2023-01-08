@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Example } from 'src/entities/example.entity';
+import { Example } from 'src/entities_example/example.entity';
 
 export type ExampleDB = {
   id: string;

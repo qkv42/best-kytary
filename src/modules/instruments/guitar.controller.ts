@@ -9,9 +9,9 @@ import {
   Post,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { Guitars } from 'src/entities/guitar.entity';
-import { Guitar } from 'src/interface';
-import { GuitarService } from 'src/services/guitar.service';
+import { Guitars } from 'src/modules/instruments/guitar.entity';
+import { Guitar } from 'src/mocks/interface';
+import { GuitarService } from 'src/modules/instruments/guitar.service';
 import { throwNotFoundError } from 'src/utils';
 
 @Controller()

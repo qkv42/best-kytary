@@ -1,4 +1,4 @@
-import { Bass } from 'src/interface';
+import { Bass } from 'src/mocks/interface';
 
 export const basses: Bass[] = [
   {

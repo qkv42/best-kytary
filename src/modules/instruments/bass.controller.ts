@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { Bass } from 'src/interface';
-import { BassService } from 'src/services/bass.service';
+import { Bass } from 'src/mocks/interface';
+import { BassService } from 'src/modules/instruments/bass.service';
 import { throwNotFoundError } from 'src/utils';
 
 @Controller()

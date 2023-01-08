@@ -1,4 +1,4 @@
-import { Guitar, GuitarShape } from 'src/interface';
+import { Guitar, GuitarShape } from 'src/mocks/interface';
 
 export const guitars: Guitar[] = [
   {

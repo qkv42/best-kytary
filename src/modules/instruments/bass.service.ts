@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Bass } from 'src/interface';
+import { Bass } from 'src/mocks/interface';
 import { basses } from 'src/mocks/basses';
 
 @Injectable()
