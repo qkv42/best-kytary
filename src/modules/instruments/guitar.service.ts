@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { GuitarsRepository } from 'src/modules/instruments/guitar.repository';
 import { Guitars } from 'src/modules/instruments/guitar.entity';
 import { guitars } from 'src/mocks/guitars';
+import { GuitarsFindParams } from './guitar.controller';
 
 @Injectable()
 export class GuitarService {
@@ -14,9 +15,13 @@ export class GuitarService {
     return this.guitarsRepository.findOne(id);
   }
 
-  getGuitars(): Promise<Guitars[]> {
+  getGuitars(params: GuitarsFindParams): Promise<Guitars[]> {
     // return guitars;
-    return this.guitarsRepository.findAll();
+    return this.guitarsRepository.findSome(params);
+  }
+
+  getGuitarsByShape(shape: string): Promise<Guitars[]> {
+    return this.guitarsRepository.findByShape(shape);
   }
 
   createGuitar(params: any): Promise<Guitars> {

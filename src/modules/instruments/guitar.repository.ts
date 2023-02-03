@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Guitars } from 'src/modules/instruments/guitar.entity';
+import { GuitarsFindParams } from './guitar.controller';
 @Injectable()
 export class GuitarsRepository {
   constructor(
@@ -9,12 +10,25 @@ export class GuitarsRepository {
     private repository: Repository<Guitars>,
   ) {}
 
+  findOne(id: number): Promise<Guitars> {
+    return this.repository.findOneBy({ id });
+  }
+
   findAll(): Promise<Guitars[]> {
     return this.repository.find();
   }
 
-  findOne(id: number): Promise<Guitars> {
-    return this.repository.findOneBy({ id });
+  findSome(params: GuitarsFindParams): Promise<Guitars[]> {
+    return this.repository.find({
+      where: {
+        shape: params.shape,
+        material: params.material,
+      },
+    });
+  }
+
+  findByShape(shape: string): Promise<Guitars[]> {
+    return this.repository.find({ where: { shape } });
   }
 
   async createOne(params: Guitars): Promise<Guitars> {
@@ -30,6 +44,6 @@ export class GuitarsRepository {
   }
 
   async truncate(): Promise<void> {
-    return await this.repository.clear();
+    return this.repository.clear();
   }
 }

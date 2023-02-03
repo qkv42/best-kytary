@@ -1,14 +1,5 @@
 import { Guitar, GuitarShape } from 'src/mocks/interface';
-
-export const guitars: Guitar[] = [
-  {
-    brand: 'Furch',
-    shape: GuitarShape.OMc,
-    material: 'spruce',
-    finish: 'satin',
-    colour: 'chocolate',
-    numberofstrings: 6,
-  },
+const otherGuitars = [
   {
     brand: 'Taylor',
     shape: GuitarShape.OM,
@@ -42,3 +33,24 @@ export const guitars: Guitar[] = [
     numberofstrings: 6,
   },
 ];
+
+const furchBase: Guitar = {
+  brand: 'Furch',
+  shape: GuitarShape.OMc,
+  material: 'spruce',
+  finish: 'satin',
+  colour: 'chocolate',
+  numberofstrings: 6,
+};
+
+const furchGuitars: Guitar[] = [
+  furchBase,
+  { ...furchBase, material: 'cedar' },
+  { ...furchBase, finish: 'satin' },
+  { ...furchBase, material: 'cedar' },
+  { ...furchBase, material: 'cedar' },
+  { ...furchBase, material: 'cedar' },
+  { ...furchBase, material: 'cedar' },
+];
+
+export const guitars: Guitar[] = [...furchGuitars, ...otherGuitars];

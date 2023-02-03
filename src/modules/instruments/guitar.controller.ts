@@ -7,6 +7,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Guitars } from 'src/modules/instruments/guitar.entity';
@@ -14,6 +15,10 @@ import { Guitar } from 'src/mocks/interface';
 import { GuitarService } from 'src/modules/instruments/guitar.service';
 import { throwNotFoundError } from 'src/utils';
 
+export interface GuitarsFindParams {
+  shape?: string;
+  material?: string;
+}
 @Controller()
 @ApiTags('Guitars')
 export class GuitarController {
@@ -29,8 +34,8 @@ export class GuitarController {
   }
 
   @Get('guitars')
-  getGuitars(): Promise<Guitars[]> {
-    return this.guitarService.getGuitars();
+  getGuitars(@Query() params: GuitarsFindParams): Promise<Guitars[]> {
+    return this.guitarService.getGuitars(params);
   }
 
   @Post('/guitar')
